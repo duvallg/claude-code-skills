@@ -1,4 +1,4 @@
-# doctator-version: 6
+# doctator-version: 7
 # Documentation standards (enforced by /doctator)
 # Full workflow and doc-type rules: invoke /doctator
 
@@ -18,3 +18,4 @@
 - Earn unusual phrasing or cut it — clever brevity must also be specifically true; glib compression delivers nothing
 - No ironic distance: avoid words that create detachment from the subject (reflex, licensed, never X)
 - When documenting tools with invocation menus, enumerate the menus and their options explicitly — don't describe them abstractly or omit them
+- Never describe a persona or archetype's experience as a year count; describe it through industry, company type and scale, and demonstrable personal impact

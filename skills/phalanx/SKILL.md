@@ -17,9 +17,9 @@ description: >-
 # Phalanx
 
 A phalanx is a formation that only works because each shield covers a
-neighbor's blind side. This skill convenes staff-level archetypes (12–20 years'
-experience each) who **analyze independently, then attack each other's
-positions, then converge**. No single archetype is trusted by default; each has
+neighbor's blind side. This skill convenes staff-level archetypes — each shaped by deep hands-on
+experience across industries, company sizes, and scales of impact — who
+**analyze independently, then challenge each other's positions, then converge**. No single archetype is trusted by default; each has
 documented blind spots the others are licensed to exploit.
 
 You are the **orchestrator**. You run the phases, spawn the archetypes as
