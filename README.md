@@ -25,7 +25,18 @@ Doctator is a 7–10 year technical writer persona with an outside-in perspectiv
 
 On first invocation in any project, it writes a `.claude/rules/doctator.md` and commits it to the repo — so every session and every collaborator works to the same documentation standard without having to invoke the skill again.
 
-Each invocation begins with a scope question: full audit of all doc types, a specific subset you choose, or strictly what you asked for. Diff mode is also configurable — propose each change with rationale before applying, or apply directly. Both preferences can be persisted in config so the questions stop appearing.
+Each invocation opens two menus before any writing happens:
+
+**Scope** — what to document this run:
+- All doc types (full audit: README, CHANGELOG, ARCHITECTURE, USAGE, INSTALLATION, FAQ)
+- Specific doc types (you choose which)
+- Only what you asked for (strictly the doc type in your request)
+
+**Delivery** — how to receive changes:
+- Propose each diff with rationale before applying
+- Apply all diffs directly
+
+Both can be persisted in config so the menus stop appearing on future invocations.
 
 **Trigger:** `/doctator` or say "document this", "update the README", "write the CHANGELOG"
 
@@ -41,7 +52,28 @@ Phalanx reviews code and designs through three phases. In Phase 1, seven staff-l
 
 Each archetype brief includes documented blind spots, and the other archetypes are explicitly asked to test against them. The Technical Writer flags documentation that compensates for a bad name rather than fixing it. The InfoSec reviewer must name a plausible attacker before any security finding stands. The Architect must state a migration cost before proposing a structural change.
 
-You staff the roster. Phalanx presents the seven archetypes and lets you pick which participate — run all seven for a pre-ship audit, or narrow to just InfoSec and Code Quality for a targeted pass. A narrowed roster stays focused: only the archetypes you selected participate through all three phases. The shorthands `--only ops,sec` and `--with cq,arch` skip the roster menu entirely. The surface is also up to you: the full codebase, a specific path or diff, a targeted concern, or a design document with no code at all.
+Each invocation opens three menus before any analysis begins:
+
+**Engineers** (multiselect) — pick any combination:
+- Staff Engineer — Operational (`ops`)
+- Staff Engineer — Code Quality (`cq`)
+- Staff Engineer — UI/Frontend (`ui`)
+
+**Specialists** (multiselect) — pick any combination:
+- Staff Architect (`arch`)
+- Staff InfoSec Engineer (`sec`)
+- Staff Technical Writer (`tw`)
+- Staff UX Practitioner (`ux`)
+
+**Surface scope** (single select):
+- Entire codebase
+- Subset of codebase (paths or diff range — you provide them next)
+- Specific concern (a question or aspect — you describe it next)
+- Deep research (an RFC, design doc, or proposal)
+
+After roster and scope, phalanx detects the stack (language, framework, runtime, deployment target) and presents it for confirmation before spawning any subagents. You can correct it if it's wrong.
+
+The shorthands `--only ops,sec` and `--with cq,arch` skip the roster menus entirely for repeat invocations.
 
 Every run produces a permanent audit log in `reviews/` (gitignored) with each phase appended in order as it completes.
 
