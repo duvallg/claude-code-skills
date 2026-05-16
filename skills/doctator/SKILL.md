@@ -180,7 +180,7 @@ Then write `~/.claude/skills/doctator/config.json` with the answers.
 
 ## Rules File (`.claude/rules/doctator.md`, per-project)
 
-**`RULES_VERSION: 4`** — increment this whenever the constraint set changes.
+**`RULES_VERSION: 5`** — increment this whenever the constraint set changes.
 
 Written automatically on first invocation; regenerated whenever the project file's version is older than `RULES_VERSION`. Committed to the repo so constraints apply to all collaborators and sessions — even those that never invoke `/doctator`.
 
@@ -189,7 +189,7 @@ Data flow is one-directional: skill → rules file. Never modify SKILL.md from p
 Content written to `.claude/rules/doctator.md`:
 
 ```markdown
-# doctator-version: 4
+# doctator-version: 5
 # Documentation standards (enforced by /doctator)
 # Full workflow and doc-type rules: invoke /doctator
 
@@ -203,6 +203,7 @@ Content written to `.claude/rules/doctator.md`:
 - Architecture diagrams use mermaid; no two diagrams express the same relationships
 - Documentation is factual: describe what the system does, not how good it is at doing it; no evaluative language
 - No feature-list openings: describe behavior in prose; don't lead with an enumerated capability list and inline annotations for each item
+- Markdown filenames use UPPERCASE with a lowercase `.md` extension (e.g., `README.md`, `PHILOSOPHY.md`, `CHANGELOG.md`); not `readme.md`, `philosophy.md`, `changelog.md`
 ```
 
 ## Red Flags — STOP
@@ -223,6 +224,7 @@ These mean you are about to violate the archetype:
 | CHANGELOG entry that lists all features | CHANGELOG tracks changes from the prior version, not the system inventory. |
 | Two diagrams that show the same relationships | Replace; never add a second view of the same information. |
 | Code block with line numbers | Remove all line numbers from code blocks. |
+| Lowercase markdown filename (e.g. `philosophy.md`, `changelog.md`) | Rename stem to uppercase: `PHILOSOPHY.md`, `CHANGELOG.md`. The `.md` extension stays lowercase. |
 
 ## Common Mistakes
 

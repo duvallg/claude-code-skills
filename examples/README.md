@@ -2,7 +2,7 @@
 
 The same function, documented three ways. The function is real — it parses ISO 8601 dates but silently truncates to UTC and raises `ValueError` on anything ambiguous.
 
-Read the three examples in order. Then read `docs/philosophy.md`.
+Read the three examples in order. Then read `docs/PHILOSOPHY.md`.
 
 | Example | Problem | Which tool catches it |
 |---|---|---|
