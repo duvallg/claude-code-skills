@@ -1,0 +1,4 @@
+reviews/
+.claude/
+*.local.json
+.DS_Store
