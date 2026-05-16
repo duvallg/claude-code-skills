@@ -1,0 +1,13 @@
+{
+  "name": "claude-code-skills",
+  "description": "Doctator (documentation generator) and Phalanx (adversarial multi-perspective code review) — two skills that exist in productive tension about how much documentation is enough.",
+  "version": "1.0.0",
+  "author": {
+    "name": "duvallg",
+    "email": "duvallg@op9.com"
+  },
+  "homepage": "https://github.com/duvallg/claude-code-skills",
+  "repository": "https://github.com/duvallg/claude-code-skills",
+  "license": "MIT",
+  "keywords": ["documentation", "code-review", "doctator", "phalanx", "adversarial"]
+}
