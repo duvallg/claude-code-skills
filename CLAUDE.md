@@ -15,7 +15,6 @@ If you edit doctator or phalanx, don't smooth over the productive conflict betwe
 ## Editing skills
 
 - Read from `skills/<name>/SKILL.md` — don't read from `~/.claude/skills/`
-- Run `bash tests/validate.sh` after any change
 - Commit skill changes separately from docs changes
 
 ## Adding skills
@@ -23,13 +22,4 @@ If you edit doctator or phalanx, don't smooth over the productive conflict betwe
 If you add a skill, it must:
 - Live in `skills/<skill-name>/SKILL.md`
 - Have `name:` and `description:` frontmatter
-- Pass `bash tests/validate.sh`
-- Be documented in `README.md` under `## Skills`
-
-## Validation
-
-```bash
-bash tests/validate.sh
-```
-
-All checks must pass before merging.
+- Be documented in `README.md` under the Skills section
