@@ -16,6 +16,11 @@ Persona: 7–10 year experienced technical writer with an outside-in perspective
 - Tone: dry/technical with slight approachability — not sterile, not casual
 - **Factual, never opinionated:** state what the system does; never editorialize, imply superiority, or use evaluative language ("best", "powerful", "robust", "ensures", "enforces quality"). Describe behavior, not virtue.
 - **No feature-list openings or inline spec dumps:** don't lead with an enumerated list of capabilities and immediately annotate each one — this reads as a spec, not a description, and condescends to the reader. Describe what the system does in prose; let structure emerge from behavior, not from a feature matrix.
+- **Positive framing:** describe what something does, not what it prevents or isn't; "disagreements are preserved" not "consensus is never manufactured" — defensive framing signals distrust of the reader.
+- **Mechanism, not combat:** when describing systematic processes, use disciplinary verbs (challenges, tests, requires, must) not adversarial ones (attacks, exploits, licensed to); adversarial framing makes structured behaviour sound predatory.
+- **Earn unusual phrasing or cut it:** clever compression earns its place only when the phrase is specifically and demonstrably true; glib brevity ("their relationship is the point") sounds like insight but delivers none.
+- **No ironic distance:** words like "reflex," "licensed," "never manufactured" create a gap between writer and subject that reads as detachment; use direct, engaged prose.
+- **Show invocation menus explicitly:** when documenting tools or skills that open interactive menus, enumerate the menus and their options — don't describe them abstractly ("a scope question") or omit them entirely; readers need to know what they will be asked and what each choice means.
 - **Never expose credentials, API keys, tokens, secrets, or PII in any documentation**
   (PII: names, email addresses, device IDs, user IDs, analytics data, location, or any information that identifies or could identify an individual)
 - **Zero trust / least exposure:** never include local filesystem paths, internal hostnames, machine-specific paths, or environment-specific details — document the concept, never the local implementation. If a path is necessary, use a placeholder (e.g., `~/project` or `<project-root>`) rather than any real system path.
@@ -180,7 +185,7 @@ Then write `~/.claude/skills/doctator/config.json` with the answers.
 
 ## Rules File (`.claude/rules/doctator.md`, per-project)
 
-**`RULES_VERSION: 5`** — increment this whenever the constraint set changes.
+**`RULES_VERSION: 6`** — increment this whenever the constraint set changes.
 
 Written automatically on first invocation; regenerated whenever the project file's version is older than `RULES_VERSION`. Committed to the repo so constraints apply to all collaborators and sessions — even those that never invoke `/doctator`.
 
@@ -189,7 +194,7 @@ Data flow is one-directional: skill → rules file. Never modify SKILL.md from p
 Content written to `.claude/rules/doctator.md`:
 
 ```markdown
-# doctator-version: 5
+# doctator-version: 6
 # Documentation standards (enforced by /doctator)
 # Full workflow and doc-type rules: invoke /doctator
 
@@ -204,6 +209,11 @@ Content written to `.claude/rules/doctator.md`:
 - Documentation is factual: describe what the system does, not how good it is at doing it; no evaluative language
 - No feature-list openings: describe behavior in prose; don't lead with an enumerated capability list and inline annotations for each item
 - Markdown filenames use UPPERCASE with a lowercase `.md` extension (e.g., `README.md`, `PHILOSOPHY.md`, `CHANGELOG.md`); not `readme.md`, `philosophy.md`, `changelog.md`
+- Frame by what something does, not what it prevents — "disagreements are preserved" not "consensus is never manufactured"
+- Use disciplinary verbs for systematic processes (challenges, requires, must), not adversarial ones (attacks, exploits, licensed to)
+- Earn unusual phrasing or cut it — clever brevity must also be specifically true; glib compression delivers nothing
+- No ironic distance: avoid words that create detachment from the subject (reflex, licensed, never X)
+- When documenting tools with invocation menus, enumerate the menus and their options explicitly — don't describe them abstractly or omit them
 ```
 
 ## Red Flags — STOP
@@ -225,6 +235,11 @@ These mean you are about to violate the archetype:
 | Two diagrams that show the same relationships | Replace; never add a second view of the same information. |
 | Code block with line numbers | Remove all line numbers from code blocks. |
 | Lowercase markdown filename (e.g. `philosophy.md`, `changelog.md`) | Rename stem to uppercase: `PHILOSOPHY.md`, `CHANGELOG.md`. The `.md` extension stays lowercase. |
+| Defensive "never X" framing (e.g. "consensus is never manufactured") | Reframe positively — state what it does instead |
+| Adversarial verbs for systematic processes (attacks, exploits, licensed to) | Replace with disciplinary verbs: challenges, tests, must, requires |
+| Glib compression that sounds clever but isn't specific ("their relationship is the point") | Either earn the phrasing with specificity or replace with a direct statement |
+| Ironic-distance words (reflex, licensed, never X) in descriptive prose | Remove; use direct engaged prose |
+| Describing invocation menus abstractly ("opens a scope question") | Enumerate the menus and options explicitly so readers know what they will be asked |
 
 ## Common Mistakes
 

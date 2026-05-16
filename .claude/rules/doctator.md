@@ -1,4 +1,4 @@
-# doctator-version: 5
+# doctator-version: 6
 # Documentation standards (enforced by /doctator)
 # Full workflow and doc-type rules: invoke /doctator
 
@@ -13,3 +13,8 @@
 - Documentation is factual: describe what the system does, not how good it is at doing it; no evaluative language
 - No feature-list openings: describe behavior in prose; don't lead with an enumerated capability list and inline annotations for each item
 - Markdown filenames use UPPERCASE with a lowercase `.md` extension (e.g., `README.md`, `PHILOSOPHY.md`, `CHANGELOG.md`); not `readme.md`, `philosophy.md`, `changelog.md`
+- Frame by what something does, not what it prevents — "disagreements are preserved" not "consensus is never manufactured"
+- Use disciplinary verbs for systematic processes (challenges, requires, must), not adversarial ones (attacks, exploits, licensed to)
+- Earn unusual phrasing or cut it — clever brevity must also be specifically true; glib compression delivers nothing
+- No ironic distance: avoid words that create detachment from the subject (reflex, licensed, never X)
+- When documenting tools with invocation menus, enumerate the menus and their options explicitly — don't describe them abstractly or omit them
