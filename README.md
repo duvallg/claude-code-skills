@@ -41,7 +41,7 @@ Phalanx reviews code and designs through three phases. In Phase 1, seven staff-l
 
 Each archetype brief includes documented blind spots, and the other archetypes are explicitly asked to test against them. The Technical Writer flags documentation that compensates for a bad name rather than fixing it. The InfoSec reviewer must name a plausible attacker before any security finding stands. The Architect must state a migration cost before proposing a structural change.
 
-You staff the roster. Phalanx presents the seven archetypes and lets you pick which participate — run all seven for a pre-ship audit, or narrow to just InfoSec and Code Quality for a targeted pass. A narrowed roster stays narrow: archetypes that stood down aren't recalled mid-run. The shorthands `--only ops,sec` and `--with cq,arch` skip the roster menu entirely. The surface is also up to you: the full codebase, a specific path or diff, a targeted concern, or a design document with no code at all.
+You staff the roster. Phalanx presents the seven archetypes and lets you pick which participate — run all seven for a pre-ship audit, or narrow to just InfoSec and Code Quality for a targeted pass. A narrowed roster stays focused: only the archetypes you selected participate through all three phases. The shorthands `--only ops,sec` and `--with cq,arch` skip the roster menu entirely. The surface is also up to you: the full codebase, a specific path or diff, a targeted concern, or a design document with no code at all.
 
 Every run produces a permanent audit log in `reviews/` (gitignored) with each phase appended in order as it completes.
 
