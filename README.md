@@ -25,6 +25,8 @@ Doctator is a 7–10 year technical writer persona with an outside-in perspectiv
 
 On first invocation in any project, it writes a `.claude/rules/doctator.md` and commits it to the repo — so every session and every collaborator works to the same documentation standard without having to invoke the skill again.
 
+Each invocation begins with a scope question: full audit of all doc types, a specific subset you choose, or strictly what you asked for. Diff mode is also configurable — propose each change with rationale before applying, or apply directly. Both preferences can be persisted in config so the questions stop appearing.
+
 **Trigger:** `/doctator` or say "document this", "update the README", "write the CHANGELOG"
 
 **Doc types:** README · CHANGELOG · ARCHITECTURE · USAGE · INSTALLATION · FAQ
@@ -37,11 +39,13 @@ Phalanx reviews code and designs through three phases. In Phase 1, seven staff-l
 
 Each archetype has documented blind spots that the others are licensed to exploit. The Technical Writer will flag documentation that exists to compensate for a bad name rather than fixing the name. The InfoSec reviewer must state a plausible attacker before raising a finding. The Operational engineer's reflex to add circuit breakers gets challenged by the Architect.
 
+You staff the roster. Phalanx presents the seven archetypes and lets you pick which participate — run all seven for a pre-ship audit, or narrow to just InfoSec and Code Quality for a targeted pass. A narrowed roster stays narrow: archetypes that stood down aren't recalled mid-run. The shorthands `--only ops,sec` and `--with cq,arch` skip the roster menu entirely. The surface is also up to you: the full codebase, a specific path or diff, a targeted concern, or a design document with no code at all.
+
 Every run produces a permanent audit log in `reviews/` (gitignored) with each phase appended in order as it completes.
 
 **Trigger:** `/phalanx` or say "thorough review", "multi-perspective review", "have the staff engineers look at this"
 
-**Archetypes:** Operational · Code Quality · UI/Frontend · UX · Architect · Technical Writer · InfoSec
+**Archetypes:** Operational (`ops`) · Code Quality (`cq`) · UI/Frontend (`ui`) · UX (`ux`) · Architect (`arch`) · Technical Writer (`tw`) · InfoSec (`sec`)
 
 **Verdict:** ship / proceed-with-conditions / do-not-proceed, with findings ranked by severity × confidence and surviving dissent recorded.
 
