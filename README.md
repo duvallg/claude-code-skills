@@ -31,6 +31,8 @@ Each invocation begins with a scope question: full audit of all doc types, a spe
 
 **Doc types:** README · CHANGELOG · ARCHITECTURE · USAGE · INSTALLATION · FAQ
 
+**Source:** [`skills/doctator/SKILL.md`](skills/doctator/SKILL.md) · [`skills/doctator/config.json`](skills/doctator/config.json)
+
 ---
 
 ## phalanx
@@ -48,6 +50,8 @@ Every run produces a permanent audit log in `reviews/` (gitignored) with each ph
 **Archetypes:** Operational (`ops`) · Code Quality (`cq`) · UI/Frontend (`ui`) · UX (`ux`) · Architect (`arch`) · Technical Writer (`tw`) · InfoSec (`sec`)
 
 **Verdict:** ship / proceed-with-conditions / do-not-proceed, with findings ranked by severity × confidence and surviving dissent recorded.
+
+**Source:** [`skills/phalanx/SKILL.md`](skills/phalanx/SKILL.md) · [`skills/phalanx/references/archetypes.md`](skills/phalanx/references/archetypes.md)
 
 ---
 
