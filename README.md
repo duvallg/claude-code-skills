@@ -1,6 +1,6 @@
 # claude-code-skills
 
-Two complementary Claude Code skills: **doctator** for documentation and **phalanx** for adversarial code review. They're shipped together because their relationship is the point — see [`docs/PHILOSOPHY.md`](docs/PHILOSOPHY.md).
+Two complementary Claude Code skills: **doctator** for documentation and **phalanx** for adversarial code review. They're packaged together because they answer the same question from different directions — see [`docs/PHILOSOPHY.md`](docs/PHILOSOPHY.md).
 
 ---
 
@@ -37,9 +37,9 @@ Each invocation begins with a scope question: full audit of all doc types, a spe
 
 ## phalanx
 
-Phalanx reviews code and designs through three phases. In Phase 1, seven staff-level archetypes (12–20 years' experience each) analyze your surface independently and in parallel — they never see each other's work. In Phase 2, each archetype attacks the others' positions, names the blind spots it's exploiting, and can withdraw its own findings under evidence. In Phase 3, a consensus agent synthesizes — but disagreement from Phase 2 survives; consensus is never manufactured.
+Phalanx reviews code and designs through three phases. In Phase 1, seven staff-level archetypes (12–20 years' experience each) analyze your surface independently and in parallel — they never see each other's work. In Phase 2, each archetype sees the others' findings and challenges what it believes is wrong, overstated, or driven by a documented bias in that lane. Findings that don't survive are withdrawn; those that do carry more weight for it. In Phase 3, a consensus agent synthesizes the full record — disagreements that neither side conceded are preserved, not papered over.
 
-Each archetype has documented blind spots that the others are licensed to exploit. The Technical Writer will flag documentation that exists to compensate for a bad name rather than fixing the name. The InfoSec reviewer must state a plausible attacker before raising a finding. The Operational engineer's reflex to add circuit breakers gets challenged by the Architect.
+Each archetype brief includes documented blind spots, and the other archetypes are explicitly asked to test against them. The Technical Writer flags documentation that compensates for a bad name rather than fixing it. The InfoSec reviewer must name a plausible attacker before any security finding stands. The Architect must state a migration cost before proposing a structural change.
 
 You staff the roster. Phalanx presents the seven archetypes and lets you pick which participate — run all seven for a pre-ship audit, or narrow to just InfoSec and Code Quality for a targeted pass. A narrowed roster stays narrow: archetypes that stood down aren't recalled mid-run. The shorthands `--only ops,sec` and `--with cq,arch` skip the roster menu entirely. The surface is also up to you: the full codebase, a specific path or diff, a targeted concern, or a design document with no code at all.
 
